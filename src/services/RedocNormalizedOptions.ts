@@ -21,6 +21,7 @@ export interface RedocRawOptions {
   onlyRequiredInSamples?: boolean | string;
   showExtensions?: boolean | string | string[];
   hideSidebar?: boolean | string;
+  hideInfo?: boolean | string;
 
   unstable_ignoreMimeParameters?: boolean;
 
@@ -122,6 +123,7 @@ export class RedocNormalizedOptions {
   onlyRequiredInSamples: boolean;
   showExtensions: boolean | string[];
   hideSidebar: boolean;
+  hideInfo: boolean;
 
   /* tslint:disable-next-line */
   unstable_ignoreMimeParameters: boolean;
@@ -150,6 +152,7 @@ export class RedocNormalizedOptions {
     this.onlyRequiredInSamples = argValueToBoolean(raw.onlyRequiredInSamples);
     this.showExtensions = RedocNormalizedOptions.normalizeShowExtensions(raw.showExtensions);
     this.hideSidebar = argValueToBoolean(raw.hideSidebar);
+    this.hideInfo = argValueToBoolean(raw.hideInfo);
 
     this.unstable_ignoreMimeParameters = argValueToBoolean(raw.unstable_ignoreMimeParameters);
 
